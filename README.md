@@ -1,24 +1,32 @@
-# README
+## Instruments Store
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> Status: Developing ⚠️
+> Type of project: Study
 
-Things you may want to cover:
+## Description
 
-* Ruby version
+...  The project is an instrument shop, aiming to learn about the rails framework.
 
-* System dependencies
+## Technology
 
-* Configuration
+Here are the technologies used in  this  project.
 
-* Database creation
+*  Ruby version 2.5.0
 
-* Database initialization
+*  Rails version 5.2.6
 
-* How to run the test suite
+*  Sqlite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Services Used
 
-* Deployment instructions
+*  Github
+*  Heroku
 
-* ...
+## Links
+
+-  Link of deployed application:  https://instruments-store.herokuapp.com
+-  Repository:  https://github.com/MatheusAlves00/instruments-store
+
+## Authors
+
+*  **Matheus Alves de Almeida**:  @MatheusAlves00  (https://github.com/MatheusAlves00)
