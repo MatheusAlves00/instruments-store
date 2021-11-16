@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_11_07_004356) do
     t.string "name"
     t.string "model"
     t.string "brand"
-    t.float "price"
+    t.decimal "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

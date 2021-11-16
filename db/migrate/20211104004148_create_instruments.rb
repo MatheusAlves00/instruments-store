@@ -4,7 +4,7 @@ class CreateInstruments < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :model
       t.string :brand
-      t.float :price
+      t.decimal :price
 
       t.timestamps
     end
