@@ -8,3 +8,7 @@
   <li><%= @user.email %></li>
   <li><%= @user.password %></li>
 </ul>
+
+<%= link_to "Destroy", user_path(@user),
+            method: :delete,
+            data: { confirm: "Are you sure?" }%>
