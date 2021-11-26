@@ -1,33 +1,69 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<section class="vh-100 bg-image" style="background-color: DarkSlateGray;">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-<%= form_with model: @user do |form| %>
-  <div>
-    <%= form.label :first_name %><br>
-    <%= form.text_field :first_name %>
-  </div>
+              <%= form_with model: @user do |form| %>
 
-  <div>
-    <%= form.label :last_name %><br>
-    <%= form.text_field :last_name %>
-  </div>
+                <div class="form-outline mb-4">
+                  <%= form.label :first_name, class:"form-label", for:"form3Example1cg" %><br>
+                  <%= form.text_field :first_name, type:"text", id:"form3Example1cg", class:"form-control form-control-lg" %>
+                </div>
 
-  <div>
-    <%= form.label :birth_date %><br>
-    <%= form.date_field :birth_date %>
-  </div>
+                <div class="form-outline mb-4">
+                  <%= form.label :last_name, class:"form-label", for:"form3Example1cg" %><br>
+                  <%= form.text_field :last_name, type:"text", id:"form3Example1cg", class:"form-control form-control-lg" %>
+                </div>
 
-  <div>
-    <%= form.label :email %><br>
-    <%= form.email_field :email %>
-  </div>
 
-  <div>
-    <%= form.label :password %><br>
-    <%= form.password_field :password %>
-  </div>
+                <div class="form-outline mb-4">
+                  <%= form.label :birth_date, class:"form-label", for:"form3Example1cg" %><br>
+                  <%= form.date_field :birth_date, type:"date", id:"form3Example1cg", class:"form-control form-control-lg" %>
+                </div>
 
-  <div>
-    <%= form.submit %>
+                <div class="form-outline mb-4">
+                  <%= form.label :email, class:"form-label", for:"form3Example3cg" %><br>
+                  <%= form.email_field :email, type:"email", id:"form3Example3cg", class:"form-control form-control-lg" %>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <%= form.label :password, class:"form-label", for:"form3Example4cg" %><br>
+                  <%= form.password_field :password, type:"password", id:"form3Example4cg", class:"form-control form-control-lg" %>
+                </div>
+
+                <%# Verificar depois esse verifique %>
+                <%# <div class="form-outline mb-4"> %>
+                <%#   <label class="form-label" for="form3Example4cdg">Repeat your password</label> %>
+                <%#   <input type="password" id="form3Example4cdg" class="form-control form-control-lg" /> %>
+                <%# </div> %>
+
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="form2Example3cg"
+                  />
+                  <label class="form-check-label" for="form2Example3g">
+                    I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                  </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                  <%= form.submit class:"btn btn-success btn-block btn-lg gradient-custom-4 text-body" %>
+                </div>
+
+                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!" class="fw-bold text-body"><u>Login here</u></a></p>
+              <% end %>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-<% end %>
+</section>
