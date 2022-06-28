@@ -1,0 +1,37 @@
+<%= form_with model: instrument do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% instrument.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :model %><br>
+    <%= form.text_field :model %>
+    <% instrument.errors.full_messages_for(:model).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :brand %><br>
+    <%= form.text_field :brand %>
+    <% instrument.errors.full_messages_for(:brand).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :price %><br>
+    <%= form.number_field :price, in: 1.0..2500.0, step: 0.5 %>
+    <% instrument.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
