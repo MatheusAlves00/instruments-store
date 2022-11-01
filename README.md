@@ -7,15 +7,19 @@
 
 ...  The project is an instrument shop, aiming to learn about the rails framework.
 
-## Technology
+## Technology/Dependencies
 
-Here are the technologies used in  this  project.
+Here are the technologies/Dependencies used in  this  project.
 
-*  Ruby version 2.5.0
+*  Ruby v2.5.0
 
-*  Rails version 5.2.6
+*  Rails v5.2.6
 
-*  Sqlite
+*  PostgreSQL v1.2.3
+
+*  NodeJS
+
+*  Bootstrap
 
 ## Services Used
 
