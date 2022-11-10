@@ -11,7 +11,7 @@
 
 Here are the technologies/Dependencies used in  this  project.
 
-*  Ruby v2.5.0
+*  Ruby v2.6.0
 
 *  Rails v5.2.6
 
