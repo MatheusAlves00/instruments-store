@@ -1,2 +1,23 @@
-<h1>Shop#index</h1>
-<p>Find me in app/views/shop/index.html.erb</p>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" width="30" height="24" class="d-inline-block align-text-top">
+      Logo
+    </a>
+  </div>
+
+  <div class="container-fluid collapse navbar-collapse">
+    <div class="" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <%= link_to 'Home', root_path, class: 'nav-link' %>
+        <%= link_to 'Shop', shop_path, class: 'nav-link active' %>
+        <a class="nav-link" href="#">Gallery</a>
+        <a class="nav-link" href="#">Contact</a>
+      </div>
+    </div>
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit">Login</button>
+    </form>
+  </div>
+</nav>
