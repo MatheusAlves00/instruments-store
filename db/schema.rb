@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2021_11_07_004356) do
     t.string "model"
     t.string "brand"
     t.decimal "price"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
