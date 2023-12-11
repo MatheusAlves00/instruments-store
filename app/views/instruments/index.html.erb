@@ -22,9 +22,9 @@
   </div>
 </nav>
 
-
 <div class="row gx-0">
   <div class="col-2">
+
     <div class="list-group" id="list-tab" role="tablist">
       <li class="list-group-item list-group-item-primary">Tipos de Instrumentos</li>
       <li class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-guitar" role="tab" aria-controls="list-home">Guitarra</li>
@@ -32,113 +32,87 @@
       <li class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-bassguitar" role="tab" aria-controls="list-messages">Contrabaixo</li>
       <li class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-piano" role="tab" aria-controls="list-settings">Piano</li>
     </div>
+
   </div>
 
   <div class="col-8 mx-auto">
     <div class="tab-content" id="nav-tabContent">
+
       <div class="tab-pane fade show active" id="list-guitar" role="tabpanel" aria-labelledby="list-home-list">
         <div class="row mx-auto mt-5">
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <% @instruments.each do |instrument| %>
+            <div class="col-sm-4 mx-auto">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:400px;width:auto;' if instrument.photo.attached? %>
+                <div class="card-body">
+                  <h5 class="card-title">Nome: <%= instrument.name %></h5>
+                  <p class="card-text">Modelo: <%= instrument.model %></p>
+                  <p class="card-text">Marca: <%= instrument.brand %></p>
+                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
+                </div>
               </div>
             </div>
-          </div>
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/3428498/pexels-photo-3428498.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/3428498/pexels-photo-3428498.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/3428498/pexels-photo-3428498.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/3428498/pexels-photo-3428498.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-sm-4 mx-auto">
-            <div class="card" style="width: 18rem;">
-              <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-
+          <% end %>
         </div>
       </div>
 
-      <div class="tab-pane fade" id="list-classicalguitar" role="tabpanel" aria-labelledby="list-profile-list">Violão</div>
-      <div class="tab-pane fade" id="list-bassguitar" role="tabpanel" aria-labelledby="list-messages-list">Contrabaixo</div>
-      <div class="tab-pane fade" id="list-piano" role="tabpanel" aria-labelledby="list-settings-list">Piano</div>
+      <div class="tab-pane fade" id="list-classicalguitar" role="tabpanel" aria-labelledby="list-profile-list">
+        <div class="row mx-auto mt-5">
+          <% @instruments.each do |instrument| %>
+            <div class="col-sm-4 mx-auto">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:400px;width:auto;' if instrument.photo.attached? %>
+                <div class="card-body">
+                  <h5 class="card-title">Nome: <%= instrument.name %></h5>
+                  <p class="card-text">Modelo: <%= instrument.model %></p>
+                  <p class="card-text">Marca: <%= instrument.brand %></p>
+                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="list-bassguitar" role="tabpanel" aria-labelledby="list-messages-list">
+        <div class="row mx-auto mt-5">
+          <% @instruments.each do |instrument| %>
+            <div class="col-sm-4 mx-auto">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:400px;width:auto;' if instrument.photo.attached? %>
+                <div class="card-body">
+                  <h5 class="card-title">Nome: <%= instrument.name %></h5>
+                  <p class="card-text">Modelo: <%= instrument.model %></p>
+                  <p class="card-text">Marca: <%= instrument.brand %></p>
+                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+      <div class="tab-pane fade" id="list-piano" role="tabpanel" aria-labelledby="list-settings-list">
+        <div class="row mx-auto mt-5">
+          <% @instruments.each do |instrument| %>
+            <div class="col-sm-4 mx-auto">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:400px;width:auto;' if instrument.photo.attached? %>
+                <div class="card-body">
+                  <h5 class="card-title">Nome: <%= instrument.name %></h5>
+                  <p class="card-text">Modelo: <%= instrument.model %></p>
+                  <p class="card-text">Marca: <%= instrument.brand %></p>
+                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>
-
 
 <footer class="text-center text-lg-start bg-dark text-muted p-2 d-flex justify-content-end">
 

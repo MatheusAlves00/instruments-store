@@ -1,12 +1,15 @@
-<h1>Instruments#show</h1>
-<p>Find me in app/views/instruments/show.html.erb</p>
+<h1>Name: <%= @instrument.name %></h1>
+<p>Model: <%= @instrument.model %></p>
+<p>Brand: <%= @instrument.brand %></p>
+<p>Price: <%= @instrument.price %></p>
 
-<h1><%= @instrument.name %></h1>
-<p><%= @instrument.model %></p>
-<p><%= @instrument.brand %></p>
-<p><%= @instrument.price %></p>
+<p>
+  <strong>Photo</strong><br>
+  <%= image_tag @instrument.photo, size: '400x400' if @instrument.photo.attached? %>
+</p>
 
-<%= link_to "Edit", edit_instrument_path(@instrument) %>
+<%= link_to "Edit", edit_instrument_path(@instrument) %> |
 <%= link_to "Destroy", instrument_path(@instrument),
             method: :delete,
-            data: { confirm: "Are you sure?" } %>
+            data: { confirm: "Are you sure?" } %> |
+<%= link_to 'Back', instruments_path %>
