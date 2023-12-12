@@ -13,7 +13,7 @@ Here are the technologies/Dependencies used in  this  project.
 
 *  Ruby v2.6.0
 
-*  Rails v5.2.6
+*  Rails v5.2.8.1
 
 *  PostgreSQL v1.2.3
 
@@ -24,11 +24,9 @@ Here are the technologies/Dependencies used in  this  project.
 ## Services Used
 
 *  Github
-*  Heroku
 
 ## Links
 
--  Link of deployed application:  https://instruments-store.herokuapp.com
 -  Repository:  https://github.com/MatheusAlves00/instruments-store
 
 ## Authors
