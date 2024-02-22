@@ -15,9 +15,23 @@
         <a class="nav-link" href="#">Contact</a>
       </div>
     </div>
+
     <form class="d-flex">
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-success' %>
+      <div class="dropdown">
+        <% if user_signed_in? %>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.email %>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to 'Manage Account', user_path(current_user.id), class: 'dropdown-item' %>
+            <hr class="dropdown-divider">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+          <% else %>
+            <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-success ms-2' %>
+          <% end %>
+      </div>
     </form>
   </div>
 </nav>
