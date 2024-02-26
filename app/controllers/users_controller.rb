@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :user?, only: [:show, :edit, :destroy]
+
   def index
     @users = User.all
   end
@@ -46,5 +49,13 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :birth_date, :email, :password)
+  end
+
+  def user?
+    if current_user.admin == true
+      return true
+    elsif current_user.id != params[:id].to_i
+      redirect_to user_path(current_user.id)
+    end
   end
 end
