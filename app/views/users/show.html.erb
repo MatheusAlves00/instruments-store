@@ -1,15 +1,95 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container light-style flex-grow-1 container-p-y">
 
-<ul>
-  <li><%= @user.first_name %></li>
-  <li><%= @user.last_name %></li>
-  <li><%= @user.birth_date %></li>
-  <li><%= @user.email %></li>
-  <li><%= @user.password %></li>
-</ul>
+    <h4 class="font-weight-bold py-3 mb-4">
+      Account settings
+    </h4>
 
-<%= link_to "Edit", edit_user_path(@user) %>
-<%= link_to "Destroy", user_path(@user),
-            method: :delete,
-            data: { confirm: "Are you sure?" }%>
+    <div class="card overflow-hidden">
+      <div class="row no-gutters row-bordered row-border-light">
+        <div class="col-md-3 pt-0">
+          <div class="list-group list-group-flush account-settings-links">
+            <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-edit">Edit Account</a>
+            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-delete">Delete Account</a>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="tab-content">
+            <div class="tab-pane fade active show" id="account-general">
+
+              <hr class="border-light m-0">
+
+              <div class="card-body">
+                <div class="form-group">
+                  <label class="form-label">First Name</label>
+                  <input type="text" class="form-control mb-1" value="<%= @user.first_name %>">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Last Name</label>
+                  <input type="text" class="form-control" value="<%= @user.last_name %>">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Birth Date</label>
+                  <input type="text" class="form-control mb-1" value="<%= @user.birth_date %>">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">E-mail</label>
+                  <input type="text" class="form-control mb-1" value="<%= @user.email %>">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Phone</label>
+                  <input type="text" class="form-control" value="+0 (123) 456 7891">
+                </div>
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="account-change-password">
+              <div class="card-body pb-2">
+
+                <div class="form-group">
+                  <label class="form-label">Current password</label>
+                  <input type="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">New password</label>
+                  <input type="password" class="form-control">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Repeat new password</label>
+                  <input type="password" class="form-control">
+                </div>
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="account-edit">
+              <div class="card-body pb-2">
+
+                <div class="form-group">
+                  <%= link_to "Edit Account", edit_user_path(@user) %>
+                </div>
+
+              </div>
+            </div>
+            <div class="tab-pane fade" id="account-delete">
+              <div class="card-body pb-2">
+                <div class="form-group">
+                  <%= link_to "Delete Account", user_path(@user),
+                              method: :delete,
+                              data: { confirm: "Are you sure?" }%>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-right mt-3">
+      <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
+      <button type="button" class="btn btn-default">Cancel</button>
+    </div>
+
+  </div>
