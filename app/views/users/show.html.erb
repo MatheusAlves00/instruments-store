@@ -12,6 +12,9 @@
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-edit">Edit Account</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-delete">Delete Account</a>
+            <% if current_user.admin == true %>
+              <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-admin-option">Admin Option</a>
+            <% end %>
           </div>
         </div>
         <div class="col-md-9">
@@ -84,6 +87,19 @@
                 </div>
               </div>
             </div>
+
+            <% if current_user.admin == true %>
+              <div class="tab-pane fade" id="account-admin-option">
+                <div class="card-body pb-2">
+                  <div class="form-group">
+                    <div class="input-group-prepend">
+                      <h4 class="font-weight-bold">Add instruments in stock</h4><br>
+                      <%= link_to 'Add Instrument', new_instrument_path, class:"btn btn-primary" %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
