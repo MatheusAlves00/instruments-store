@@ -1,0 +1,39 @@
+<script src="https://kit.fontawesome.com/99af388dfc.js" crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand mx-4 d-flex flex-row align-items-center" href="<% link_to root_path %>">
+      <i class="fa-solid fa-guitar pe-2" style="font-size:1.5em;"></i>
+      <span style="font-size:1.2em;">Instrument Store</span>
+    </a>
+  </div>
+
+  <div class="container-fluid collapse navbar-collapse">
+    <div class="" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <%= link_to 'Shop', shop_path, class: 'nav-link' %>
+        <a class="nav-link" href="#">Gallery</a>
+        <a class="nav-link" href="#">Contact</a>
+      </div>
+    </div>
+
+    <form class="d-flex">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <div class="dropdown">
+        <% if user_signed_in? %>
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%= current_user.email %>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <%= link_to 'Manage Account', user_path(current_user.id), class: 'dropdown-item' %>
+            <hr class="dropdown-divider">
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+          <% else %>
+            <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-success ms-2' %>
+          <% end %>
+      </div>
+    </form>
+  </div>
+</nav>
