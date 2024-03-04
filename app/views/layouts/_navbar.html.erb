@@ -11,8 +11,8 @@
   <div class="container-fluid collapse navbar-collapse">
     <div class="" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <%= link_to 'Shop', shop_path, class: 'nav-link' %>
+        <a class="nav-link <%= request.path == root_path ? 'active' : '' %>" href="<%= root_path %>">Home</a>
+        <a class="nav-link <%= request.path == shop_path ? 'active' : '' %>" href="<%= shop_path %>">Shop</a>
         <a class="nav-link" href="#">Gallery</a>
         <a class="nav-link" href="#">Contact</a>
       </div>
