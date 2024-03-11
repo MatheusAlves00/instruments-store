@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :instruments
+  resources :instruments, :except => [:index]
   resources :users
 
-  get "/shop", to: "shop#index"
+  get "/shop", to: "instruments#index"
 
   root to: 'welcome#index'
 end
