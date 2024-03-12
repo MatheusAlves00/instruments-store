@@ -1,4 +1,7 @@
 class InstrumentsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
+  before_action :admin?, only: [:new, :edit, :destroy]
+
   def index
     @instruments = Instrument.all
   end
@@ -46,5 +49,12 @@ class InstrumentsController < ApplicationController
 
   def instrument_params
     params.require(:instrument).permit(:name, :model, :brand, :price, :image, :photo)
+  end
+  def admin?
+    if current_user.admin == true
+      return true
+    else 
+      redirect_to root_path
+    end
   end
 end
