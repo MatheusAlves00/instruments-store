@@ -1,26 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://getbootstrap.com/docs/5.1/assets/brand/bootstrap-logo.svg" width="30" height="24" class="d-inline-block align-text-top">
-      Logo
-    </a>
-  </div>
-
-  <div class="container-fluid collapse navbar-collapse">
-    <div class="" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="#">Home</a>
-        <a class="nav-link" href="#">Shop</a>
-        <a class="nav-link" href="#">Gallery</a>
-        <a class="nav-link" href="#">Contact</a>
-      </div>
-    </div>
-    <form class="d-flex">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-  </div>
-</nav>
+<%= render 'layouts/navbar' %>
 
 <div class="row gx-0">
   <div class="col-2">
@@ -114,48 +92,4 @@
   </div>
 </div>
 
-<footer class="text-center text-lg-start bg-dark text-muted p-2 d-flex justify-content-end">
-
-  <section class="text-white">
-    <div class="container text-center text-md-start mt-5">
-      <div class="row mt-3">
-        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">
-            <i class="fas fa-gem me-3"></i>Instruments Store
-          </h6>
-          <p>
-            Here you can use rows and columns to organize your footer content. Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit.
-          </p>
-        </div>
-
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">
-            Social Midia
-          </h6>
-          <p><a href="#!" class="text-reset">Facebook</a></p>
-          <p><a href="#!" class="text-reset">Linkedin</a></p>
-          <p><a href="#!" class="text-reset">Github</a></p>
-          <p><a href="#!" class="text-reset">Youtube</a></p>
-        </div>
-
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-          <h6 class="text-uppercase fw-bold mb-4">
-            Contact
-          </h6>
-          <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-          <p>
-            <i class="fas fa-envelope me-3"></i>
-            suport@instrumentstore.com
-          </p>
-          <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-          <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="text-center text-white p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2021 Copyright. All right reserved.
-  </div>
-</footer>
+<%= render 'layouts/footer' %>
