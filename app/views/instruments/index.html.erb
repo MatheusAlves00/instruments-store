@@ -2,7 +2,6 @@
 
 <div class="row gx-0">
   <div class="col-2">
-
     <div class="list-group" id="list-tab" role="tablist">
       <li class="list-group-item list-group-item-primary">Tipos de Instrumentos</li>
       <li class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-guitar" role="tab" aria-controls="list-home">Guitarra</li>
@@ -10,86 +9,39 @@
       <li class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-bassguitar" role="tab" aria-controls="list-messages">Contrabaixo</li>
       <li class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-piano" role="tab" aria-controls="list-settings">Piano</li>
     </div>
-
   </div>
 
-  <div class="col-8 mx-auto">
-    <div class="tab-content" id="nav-tabContent">
+  <section class="py-5 col-10">
+    <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-      <div class="tab-pane fade show active" id="list-guitar" role="tabpanel" aria-labelledby="list-home-list">
-        <div class="row mx-auto mt-5">
-          <% @instruments.each do |instrument| %>
-            <div class="col-sm-4 mx-auto">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:400px;width:auto;' if instrument.photo.attached? %>
-                <div class="card-body">
-                  <h5 class="card-title">Nome: <%= instrument.name %></h5>
-                  <p class="card-text">Modelo: <%= instrument.model %></p>
-                  <p class="card-text">Marca: <%= instrument.brand %></p>
-                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
+        <% @instruments.each do |instrument| %>
+        <div class="col mb-5">
+          <div class="card h-100">
+            <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:350px;width:auto;' if instrument.photo.attached? %>
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
+                <div class="d-flex justify-content-center small text-warning mb-2">
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
                 </div>
+                <p class="card-text">Preço: R$ <%= instrument.price %></p>
               </div>
             </div>
-          <% end %>
-        </div>
-      </div>
-
-      <div class="tab-pane fade" id="list-classicalguitar" role="tabpanel" aria-labelledby="list-profile-list">
-        <div class="row mx-auto mt-5">
-          <% @instruments.each do |instrument| %>
-            <div class="col-sm-4 mx-auto">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:400px;width:auto;' if instrument.photo.attached? %>
-                <div class="card-body">
-                  <h5 class="card-title">Nome: <%= instrument.name %></h5>
-                  <p class="card-text">Modelo: <%= instrument.model %></p>
-                  <p class="card-text">Marca: <%= instrument.brand %></p>
-                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                </div>
-              </div>
+            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+              <div class="text-center"><%= link_to 'Add to cart', instrument_path(instrument), class:'btn btn-outline-dark mt-auto' %></div>
             </div>
-          <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
 
-      <div class="tab-pane fade" id="list-bassguitar" role="tabpanel" aria-labelledby="list-messages-list">
-        <div class="row mx-auto mt-5">
-          <% @instruments.each do |instrument| %>
-            <div class="col-sm-4 mx-auto">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:400px;width:auto;' if instrument.photo.attached? %>
-                <div class="card-body">
-                  <h5 class="card-title">Nome: <%= instrument.name %></h5>
-                  <p class="card-text">Modelo: <%= instrument.model %></p>
-                  <p class="card-text">Marca: <%= instrument.brand %></p>
-                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
       </div>
-
-      <div class="tab-pane fade" id="list-piano" role="tabpanel" aria-labelledby="list-settings-list">
-        <div class="row mx-auto mt-5">
-          <% @instruments.each do |instrument| %>
-            <div class="col-sm-4 mx-auto">
-              <div class="card" style="width: 18rem;">
-                <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:400px;width:auto;' if instrument.photo.attached? %>
-                <div class="card-body">
-                  <h5 class="card-title">Nome: <%= instrument.name %></h5>
-                  <p class="card-text">Modelo: <%= instrument.model %></p>
-                  <p class="card-text">Marca: <%= instrument.brand %></p>
-                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        </div>
-      </div>
-
     </div>
-  </div>
+  </section>
 </div>
 
 <%= render 'layouts/footer' %>
