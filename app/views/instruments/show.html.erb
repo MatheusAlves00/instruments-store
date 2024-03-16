@@ -18,12 +18,14 @@
                 Add to cart
             </button>
         </div>
-        <% if current_user.admin %>
-          <%= link_to "Edit", edit_instrument_path(@instrument) %> |
-          <%= link_to "Destroy", instrument_path(@instrument),
-          method: :delete,
-          data: { confirm: "Are you sure?" } %> |
-          <%= link_to 'Back', instruments_path %>
+        <% if current_user && current_user.admin %>
+          <p class="font-italic mt-5">Admin options:</p>
+          <div class="d-flex align-items-end mt-1">
+            <%= link_to "Edit", edit_instrument_path(@instrument), class:'btn btn-primary me-1' %>
+            <%= link_to "Destroy", instrument_path(@instrument), class:'btn btn-danger',
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+          </div>
         <% end %>
       </div>
     </div>
