@@ -1,5 +1,5 @@
 class InstrumentsController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :admin?, only: [:new, :edit, :destroy]
 
   def index
