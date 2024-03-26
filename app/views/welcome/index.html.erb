@@ -23,67 +23,30 @@
 </div>
 
 <div class="row mx-auto mt-5">
-  <div class="col-sm-3 mx-auto">
-    <div class="card" style="width: 18rem;">
-      <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <h2 class="fw-bolder mb-4 d-flex justify-content-center">Highlights products</h2>
+  <% @instruments.each do |instrument| %>
+    <div class="col-sm-3 mx-auto">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:350px;width:auto;' if instrument.photo.attached? %>
+        <div class="card-body p-4">
+          <div class="text-center">
+            <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
+            <div class="d-flex justify-content-center small text-warning mb-2">
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+              <div class="bi-star-fill"></div>
+            </div>
+            <p class="card-text">Preço: R$ <%= instrument.price %></p>
+          </div>
+        </div>
+        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+          <div class="text-center"><%= link_to 'Add to cart', shop_path(instrument), class:'btn btn-outline-dark mt-auto' %></div>
+        </div>
       </div>
     </div>
-  </div>
-
-  <div class="col-sm-3 mx-auto">
-    <div class="card" style="width: 18rem;">
-      <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3 mx-auto">
-    <div class="card" style="width: 18rem;">
-      <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="row mx-auto mt-5">
-  <div class="col-sm-3 mx-auto">
-    <div class="card" style="width: 18rem;">
-      <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3 mx-auto">
-    <div class="card" style="width: 18rem;">
-      <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-3 mx-auto">
-    <div class="card" style="width: 18rem;">
-      <img src="https://images.pexels.com/photos/7334396/pexels-photo-7334396.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      </div>
-    </div>
-  </div>
+  <% end %>
 </div>
 
 <%= render 'layouts/footer' %>
