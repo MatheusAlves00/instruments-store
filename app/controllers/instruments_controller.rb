@@ -8,6 +8,7 @@ class InstrumentsController < ApplicationController
 
   def show
     @instrument = Instrument.find(params[:id])
+    @instruments = Instrument.all
   end
 
   def new
