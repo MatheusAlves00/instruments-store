@@ -32,12 +32,10 @@
                 <p class="card-text">Preço: R$ <%= instrument.price %></p>
               </div>
             </div>
-            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-              <div class="text-center"><%= link_to 'Add to cart', shop_path(instrument), class:'btn btn-outline-dark mt-auto' %></div>
-            </div>
+            <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
           </div>
         </div>
-      <% end %>
+        <% end %>
 
       </div>
     </div>
