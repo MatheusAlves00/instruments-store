@@ -4,10 +4,4 @@
   <% @users.each do |user| %>
     <%= link_to user.first_name, user, class:"list-group-item list-group-item-action" %>
   <% end %>
-
-  <div class="my-3">
-    <%= link_to "New User", new_user_path, class:"me-1 btn btn-primary" %>
-    <div class="vr"></div>
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:"ms-1 btn btn-danger" %>
-  </div>
 </div>
