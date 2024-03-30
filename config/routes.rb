@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :users, :except => [:new]
   resources :shop, controller: 'instruments', :only => [:index, :show]
 
+  get 'contacts', to: 'contacts#index'
+
   root to: 'welcome#index'
 end
