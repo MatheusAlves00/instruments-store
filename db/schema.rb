@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2024_04_03_211215) do
     t.string "brand"
     t.decimal "price"
     t.string "image"
-    t.string "type_product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "product_type_id"
@@ -48,12 +47,6 @@ ActiveRecord::Schema.define(version: 2024_04_03_211215) do
 
   create_table "product_types", force: :cascade do |t|
     t.string "type_name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "type_products", force: :cascade do |t|
-    t.string "type_product"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
