@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<form>
+
+  <div class="form-group">
+    <%= label_tag nil, @product_type.class.human_attribute_name(:type_name) %>
+    <%= text_field_tag nil, @product_type.type_name, class:"form-control", disabled:true %>
+  </div>
+
+</form>
+
+<%= link_to t('links.edit'), edit_product_type_path(@product_type), class: "btn btn-primary" %> |
+<%= link_to t('links.back'), product_types_path, class: "btn btn-primary" %>
