@@ -25,8 +25,8 @@
 <div class="row mx-auto mt-5">
   <h2 class="fw-bolder mb-4 d-flex justify-content-center">Highlights products</h2>
   <% @instruments.each do |instrument| %>
-    <div class="col-sm-3 mx-auto">
-      <div class="card" style="width: 18rem;">
+    <div class="col-sm-3 mx-auto my-3">
+      <div class="card h-100" style="width: 18rem;">
         <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:350px;width:auto;' if instrument.photo.attached? %>
         <div class="card-body p-4">
           <div class="text-center">
