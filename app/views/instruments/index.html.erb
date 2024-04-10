@@ -3,43 +3,55 @@
 <div class="row gx-0">
   <div class="col-2">
     <div class="list-group" id="list-tab" role="tablist">
-      <li class="list-group-item list-group-item-primary">Tipos de Instrumentos</li>
-      <li class="list-group-item list-group-item-action active" id="list-home-list" data-bs-toggle="list" href="#list-guitar" role="tab" aria-controls="list-home">Guitarra</li>
-      <li class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-classicalguitar" role="tab" aria-controls="list-profile">Violão</li>
-      <li class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-bassguitar" role="tab" aria-controls="list-messages">Contrabaixo</li>
-      <li class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-piano" role="tab" aria-controls="list-settings">Piano</li>
+      <a class="list-group-item list-group-item-primary">Instrument types</a>
+      <a class="list-group-item list-group-item-action active" data-toggle="list" href="#list-guitar" role="tab" aria-controls="home">Guitar</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-electric-guitar" role="tab" aria-controls="profile">Electric Guitar</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-bass" role="tab" aria-controls="messages">Bass</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-keyboard" role="tab" aria-controls="settings">Keyboard</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-piano" role="tab" aria-controls="settings">Piano</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-flute" role="tab" aria-controls="settings">Flute</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-cello" role="tab" aria-controls="settings">Cello</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-clarinet" role="tab" aria-controls="settings">Clarinet</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-accordion" role="tab" aria-controls="settings">Accordion</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-saxophone" role="tab" aria-controls="settings">Saxophone</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-violin" role="tab" aria-controls="settings">Violin</a>
+      <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-drums" role="tab" aria-controls="settings">Drums</a>
     </div>
   </div>
 
-  <section class="py-5 col-10">
-    <div class="container px-4 px-lg-5 mt-5">
-      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+  <div class="col-8">
+    <div class="tab-content" id="nav-tabContent">
 
+      <div class="tab-pane fade show active" id="list-guitar" role="tabpanel" aria-labelledby="list-home-list">
         <% @instruments.each do |instrument| %>
-        <div class="col-auto p-0 m-4 hover-shadow">
-          <div class="card h-100" style="width: 18rem;">
-            <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:350px;width:auto;' if instrument.photo.attached? %>
-            <div class="card-body p-4">
-              <div class="text-center">
-                <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                <div class="d-flex justify-content-center small text-warning mb-2">
-                  <div class="bi-star-fill"></div>
-                  <div class="bi-star-fill"></div>
-                  <div class="bi-star-fill"></div>
-                  <div class="bi-star-fill"></div>
-                  <div class="bi-star-fill"></div>
+          <div class="col-1 p-0 m-0 hover-shadow">
+            <div class="card h-100" style="width: 18rem;">
+              <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:350px;width:auto;' if instrument.photo.attached? %>
+              <div class="card-body p-4">
+                <div class="text-center">
+                  <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
+                  <div class="d-flex justify-content-center small text-warning mb-2">
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                    <div class="bi-star-fill"></div>
+                  </div>
+                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
                 </div>
-                <p class="card-text">Preço: R$ <%= instrument.price %></p>
               </div>
+              <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
             </div>
-            <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
           </div>
-        </div>
         <% end %>
-
       </div>
+
+      <div class="tab-pane fade" id="list-electric-guitar" role="tabpanel" aria-labelledby="list-profile-list">...</div>
+      <div class="tab-pane fade" id="list-bass" role="tabpanel" aria-labelledby="list-messages-list">...</div>
+      <div class="tab-pane fade" id="list-keyboard" role="tabpanel" aria-labelledby="list-settings-list">...</div>
+
     </div>
-  </section>
+  </div>
 </div>
 
 <%= render 'layouts/footer' %>
