@@ -23,27 +23,38 @@
     <div class="tab-content" id="nav-tabContent">
 
       <div class="tab-pane fade show active" id="list-guitar" role="tabpanel" aria-labelledby="list-home-list">
-        <% @instruments.each do |instrument| %>
-          <div class="col-1 p-0 m-0 hover-shadow">
-            <div class="card h-100" style="width: 18rem;">
-              <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:350px;width:auto;' if instrument.photo.attached? %>
-              <div class="card-body p-4">
-                <div class="text-center">
-                  <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                  <div class="d-flex justify-content-center small text-warning mb-2">
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
-                    <div class="bi-star-fill"></div>
+        <section class="py-5">
+          <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+              <% @instruments.each do |instrument| %>
+                <div class="col mb-5 hover-shadow">
+                  <div class="card h-100">
+                    <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:350px;width:auto;' if instrument.photo.attached? %>
+                    <div class="card-body p-4">
+                      <div class="text-center">
+                        <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                          <div class="bi-star-fill"></div>
+                          <div class="bi-star-fill"></div>
+                          <div class="bi-star-fill"></div>
+                          <div class="bi-star-fill"></div>
+                          <div class="bi-star-fill"></div>
+                        </div>
+                        <p class="card-text">Preço: R$ <%= instrument.price %></p>
+                      </div>
+                    </div>
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                      <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
+                    </div>
                   </div>
-                  <p class="card-text">Preço: R$ <%= instrument.price %></p>
+                  <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
                 </div>
-              </div>
-              <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
+              <% end %>
+
             </div>
           </div>
-        <% end %>
+        </section>
       </div>
 
       <div class="tab-pane fade" id="list-electric-guitar" role="tabpanel" aria-labelledby="list-profile-list">...</div>
