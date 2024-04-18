@@ -50,7 +50,7 @@
               <div class="card-body pb-2">
 
                 <div class="form-group">
-                  <%= link_to "Edit Account", edit_user_path(@user) %>
+                  <%= link_to "Edit Account", edit_user_path(@user), class: 'btn btn-info' %><br>
                 </div>
 
               </div>
@@ -60,7 +60,8 @@
                 <div class="form-group">
                   <%= link_to "Delete Account", user_path(@user),
                               method: :delete,
-                              data: { confirm: "Are you sure?" }%>
+                              data: { confirm: "Are you sure?" },
+                              class: 'btn btn-danger' %>
                 </div>
               </div>
             </div>
