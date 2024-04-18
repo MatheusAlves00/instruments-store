@@ -9,7 +9,6 @@
         <div class="col-md-3 pt-0">
           <div class="list-group list-group-flush account-settings-links">
             <a class="list-group-item list-group-item-action active" data-toggle="list" href="#account-general">General</a>
-            <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-change-password">Change password</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-edit">Edit Account</a>
             <a class="list-group-item list-group-item-action" data-toggle="list" href="#account-delete">Delete Account</a>
             <% if current_user.admin == true %>
@@ -46,26 +45,6 @@
                 </div>
               </div>
 
-            </div>
-            <div class="tab-pane fade" id="account-change-password">
-              <div class="card-body pb-2">
-
-                <div class="form-group">
-                  <label class="form-label">Current password</label>
-                  <input type="password" class="form-control">
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label">New password</label>
-                  <input type="password" class="form-control">
-                </div>
-
-                <div class="form-group">
-                  <label class="form-label">Repeat new password</label>
-                  <input type="password" class="form-control">
-                </div>
-
-              </div>
             </div>
             <div class="tab-pane fade" id="account-edit">
               <div class="card-body pb-2">
