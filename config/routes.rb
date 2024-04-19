@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :product_types
 
   get 'contacts', to: 'contacts#index'
+  get :shopping_carts, :path => 'cart', to: 'shopping_carts#index'
 
   root to: 'welcome#index'
 end
