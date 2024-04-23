@@ -44,7 +44,7 @@ class InstrumentsController < ApplicationController
     @instrument = Instrument.find(params[:id])
     @instrument.destroy
 
-    redirect_to instruments_path
+    redirect_to shop_index_path
   end
 
   private
