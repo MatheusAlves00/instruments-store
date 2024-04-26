@@ -28,6 +28,12 @@
           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
             <%= link_to 'Manage Account', user_path(current_user.id), class: 'dropdown-item' %>
             <hr class="dropdown-divider">
+            <% if current_user.admin == true %>
+              <a class="dropdown-item disabled" href="#">Admin Options</a>
+              <%= link_to 'Add Instrument', new_instrument_path, class:"dropdown-item text-primary" %>
+              <%= link_to 'Show Users', users_path, class:"dropdown-item text-success" %>
+              <hr class="dropdown-divider">
+            <% end %>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
           </div>
         <% else %>
