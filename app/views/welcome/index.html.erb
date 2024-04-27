@@ -23,8 +23,8 @@
 </div>
 
 <div class="row mx-auto mt-5">
-  <h2 class="fw-bolder mb-4 d-flex justify-content-center">Highlights products</h2>
-  <% @instruments.each do |instrument| %>
+  <h2 class="fw-bolder mb-4 d-flex justify-content-center">Featured products</h2>
+  <% @instruments.take(4).each do |instrument| %>
     <div class="col-sm-3 mx-auto my-3">
       <div class="card h-100" style="width: 18rem;">
         <img class="card-img-top"><%= image_tag instrument.photo, style: 'height:350px;width:auto;' if instrument.photo.attached? %>
