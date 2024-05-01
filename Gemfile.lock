@@ -92,7 +92,7 @@ GEM
     diff-lcs (1.5.1)
     erubi (1.11.0)
     execjs (2.8.1)
-    factory_bot (6.4.5)
+    factory_bot (6.4.4)
       activesupport (>= 5.0.0)
     ffi (1.15.5)
     globalid (1.0.0)
@@ -270,7 +270,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.9)
   devise-i18n (~> 1.12)
-  factory_bot
+  factory_bot (= 6.4.4)
   image_processing
   jbuilder (~> 2.5)
   jquery-rails
