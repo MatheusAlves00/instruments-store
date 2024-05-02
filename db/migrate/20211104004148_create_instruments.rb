@@ -5,7 +5,7 @@ class CreateInstruments < ActiveRecord::Migration[5.2]
       t.string :model
       t.string :brand
       t.decimal :price
-      t.string :image
+      t.string :description
 
       t.timestamps
     end
