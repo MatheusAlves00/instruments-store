@@ -5,26 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+ProductType.destroy_all
 Instrument.destroy_all
 
-Instrument.create!([{
-  name: 'Violão Acústico 3/4',
-  model: 'FA-15',
-  brand: 'Fender',
-  price: 1234.00,
-  image: '1'
-},
-{
-  name: 'ContraBaixo Elétrico',
-  model: 'Classic Vibe 60s Precision Bass',
-  brand: 'Squier',
-  price: 4975.00,
-  image: '2'
-},
-{
-  name: 'Guitarra',
-  model: 'Pacifica 112 VII',
-  brand: 'Yamaha',
-  price: 835.00,
-  image: '3'
-}])
+ProductType.create!(
+[{ type_name: 'Guitar' }, { type_name: 'Electric Guitar' },
+{ type_name: 'Bass' }, { type_name: 'Keyboard' },
+{ type_name: 'Piano' }, { type_name: 'Flute' },
+{ type_name: 'Cello' }, { type_name: 'Clarinet' },
+{ type_name: 'Accordion' }, { type_name: 'Saxophone' },
+{ type_name: 'Violin' }, { type_name: 'Drums' }])
+
+# Instrument.create!([{
+#   name: 'Violão Acústico 3/4',
+#   model: 'FA-15',
+#   brand: 'Fender',
+#   price: 1234.00
+# },
+# {
+#   name: 'ContraBaixo Elétrico',
+#   model: 'Classic Vibe 60s Precision Bass',
+#   brand: 'Squier',
+#   price: 4975.00
+# },
+# {
+#   name: 'Guitarra',
+#   model: 'Pacifica 112 VII',
+#   brand: 'Yamaha',
+#   price: 835.00
+# }])
