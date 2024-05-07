@@ -50,7 +50,7 @@ class InstrumentsController < ApplicationController
   private
 
   def instrument_params
-    params.require(:instrument).permit(:name, :model, :brand, :price, :image, :photo, :product_type_id)
+    params.require(:instrument).permit(:name, :model, :brand, :price, :description, :photo, :product_type_id)
   end
 
   def admin?
