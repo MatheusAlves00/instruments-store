@@ -42,29 +42,29 @@
   <div class="container px-4 px-lg-5 mt-5">
     <h2 class="fw-bolder mb-4">Featured Products</h2>
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
       <% @instruments.take(5).each do |instrument| %>
-      <div class="col mb-5">
-        <div class="card h-100">
-          <%= image_tag instrument.photo, class:'card-img-top', style: 'height:350px;width:auto;' if instrument.photo.attached? %>
-          <div class="card-body p-4">
-            <div class="text-center">
-              <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-              <div class="d-flex justify-content-center small text-warning mb-2">
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
-                <div class="bi-star-fill"></div>
+        <div class="col mx-2 px-0 hover-shadow" style='max-width:190px;max-height:550px;'>
+          <div class="card h-100">
+            <%= image_tag instrument.photo, class:'card-img-top', style: 'width:auto;height:350px;' if instrument.photo.attached? %>
+            <div class="card-body p-4">
+              <div class="text-center">
+                <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
+                <div class="d-flex justify-content-center small text-warning mb-2">
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                  <div class="bi-star-fill"></div>
+                </div>
+                <p class="card-text">R$ <%= instrument.price %></p>
               </div>
-              <p class="card-text">R$ <%= instrument.price %></p>
             </div>
           </div>
-          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-            <div class="text-center"><%= link_to 'Add to cart', shop_path(instrument), class:'btn btn-outline-dark mt-auto' %></div>
-          </div>
+          <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
         </div>
-      </div>
       <% end %>
+
     </div>
   </div>
 </section>
