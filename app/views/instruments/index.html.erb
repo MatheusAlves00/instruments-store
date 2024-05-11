@@ -29,7 +29,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
+                <div class="col mb-5 hover-shadow d-flex justify-content-start p-0 mx-2" style='max-width:240px;max-height:550px;'>
                   <div class="card h-100">
                     <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
                     <div class="card-body p-4">
