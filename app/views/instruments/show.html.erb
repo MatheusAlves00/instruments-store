@@ -44,7 +44,7 @@
     <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
       <% @instruments.take(5).each do |instrument| %>
-        <div class="col mx-2 px-0 hover-shadow" style='max-width:190px;max-height:550px;'>
+        <div class="col mx-2 px-0 hover-shadow" style="max-width:190px;max-height:550px;">
           <div class="card h-100">
             <%= image_tag instrument.photo, class:'card-img-top', style: 'width:auto;height:350px;' if instrument.photo.attached? %>
             <div class="card-body p-4">
