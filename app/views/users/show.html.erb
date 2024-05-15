@@ -25,23 +25,27 @@
               <div class="card-body">
                 <div class="form-group mb-2">
                   <label class="form-label">First Name</label>
-                  <span class="input-group-text" id="basic-addon3"><%= @user.first_name %></span>
+                  <span class="input-group-text"><%= @user.first_name %></span>
                 </div>
                 <div class="form-group mb-2">
                   <label class="form-label">Last Name</label>
-                  <span class="input-group-text" id="basic-addon3"><%= @user.last_name %></span>
+                  <span class="input-group-text"><%= @user.last_name %></span>
                 </div>
                 <div class="form-group mb-2">
                   <label class="form-label">Birth Date</label>
-                  <span class="input-group-text" id="basic-addon3"><%= @user.birth_date %></span>
-                </div>
-                <div class="form-group mb-2">
-                  <label class="form-label">E-mail</label>
-                  <span class="input-group-text" id="basic-addon3"><%= @user.email %></span>
+                  <span class="input-group-text"><%= @user.birth_date %></span>
                 </div>
                 <div class="form-group mb-2">
                   <label class="form-label">Phone</label>
-                  <span class="input-group-text" id="basic-addon3">+0 (123) 456 7891</span>
+                  <span class="input-group-text"><%= @user.phone ? @user.phone : 'Empty' %></span>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="form-label">Address</label>
+                  <span class="input-group-text"><%= @user.address ? @suer.address : 'Empty' %></span>
+                </div>
+                <div class="form-group mb-2">
+                  <label class="form-label">E-mail</label>
+                  <span class="input-group-text"><%= @user.email %></span>
                 </div>
               </div>
 
