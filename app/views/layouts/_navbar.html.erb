@@ -12,7 +12,7 @@
     <div class="" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link <%= request.path == root_path ? 'active' : '' %>" href="<%= root_path %>">Home</a>
-        <a class="nav-link <%= request.path == shop_index_path ? 'active' : '' %>" href="<%= shop_index_path %>">Shop</a>
+        <a class="nav-link <%= request.path == shop_index_path || params[:id] ? 'active' : '' %>" href="<%= shop_index_path %>">Shop</a>
         <a class="nav-link <%= request.path == shopping_carts_path ? 'active' : '' %>" href="<%= shopping_carts_path %>">Cart</a>
         <a class="nav-link <%= request.path == contacts_path ? 'active' : '' %>" href="<%= contacts_path %>">Contacts</a>
       </div>
