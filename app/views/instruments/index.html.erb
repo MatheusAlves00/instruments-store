@@ -31,7 +31,11 @@
               <% @instruments.each do |instrument| %>
                 <div class="col mb-5 hover-shadow d-flex justify-content-start p-0 mx-2" style='max-width:240px;max-height:550px;'>
                   <div class="card h-100">
-                    <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
+                    <% if instrument.photo.attached? %>
+                      <%= image_tag instrument.photo, class: 'card-img-top', style: 'height:350px;width:auto;' if instrument.photo.attached? %>
+                    <% else %>
+                      <img class="card-img-top" style="height:350px;width:238px;background-color:gray;border:solid 1px gray;">
+                    <% end %>
                     <div class="card-body p-4">
                       <div class="text-center">
                         <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
