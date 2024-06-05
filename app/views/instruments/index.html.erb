@@ -29,29 +29,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <div class="col mb-5 hover-shadow d-flex justify-content-start p-0 mx-2" style='max-width:240px;max-height:550px;'>
-                  <div class="card h-100">
-                    <% if instrument.photo.attached? %>
-                      <%= image_tag instrument.photo, class: 'card-img-top', style: 'height:350px;width:auto;' if instrument.photo.attached? %>
-                    <% else %>
-                      <img class="card-img-top" style="height:350px;width:238px;background-color:gray;border:solid 1px gray;">
-                    <% end %>
-                    <div class="card-body p-4">
-                      <div class="text-center">
-                        <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                        <div class="d-flex justify-content-center small text-warning mb-2">
-                          <div class="bi-star-fill"></div>
-                          <div class="bi-star-fill"></div>
-                          <div class="bi-star-fill"></div>
-                          <div class="bi-star-fill"></div>
-                          <div class="bi-star-fill"></div>
-                        </div>
-                        <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                      </div>
-                    </div>
-                  </div>
-                  <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                </div>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, '') %>
               <% end %>
 
             </div>
@@ -65,27 +43,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Guitar' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Guitar') %>
               <% end %>
 
             </div>
@@ -99,27 +57,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Electric guitar' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Electric guitar') %>
               <% end %>
 
             </div>
@@ -133,27 +71,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Bass' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Bass') %>
               <% end %>
 
             </div>
@@ -167,27 +85,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Keyboard' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Keyboard') %>
               <% end %>
 
             </div>
@@ -201,27 +99,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Piano' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Piano') %>
               <% end %>
 
             </div>
@@ -235,27 +113,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Flute' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Flute') %>
               <% end %>
 
             </div>
@@ -269,27 +127,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Cello' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Cello') %>
               <% end %>
 
             </div>
@@ -303,27 +141,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Clarinet' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Clarinet') %>
               <% end %>
 
             </div>
@@ -337,27 +155,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Accordion' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Accordion') %>
               <% end %>
 
             </div>
@@ -371,27 +169,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Saxophone' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Saxophone') %>
               <% end %>
 
             </div>
@@ -405,27 +183,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Violin' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Violin') %>
               <% end %>
 
             </div>
@@ -439,27 +197,7 @@
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
               <% @instruments.each do |instrument| %>
-                <% if instrument.product_type.type_name == 'Drums' %>
-                  <div class="col mb-5 hover-shadow d-flex justify-content-start" style='max-width:240px;max-height:550px;'>
-                    <div class="card h-100">
-                      <img class="card-img-top"><%= image_tag instrument.photo, style:'width:auto;height:350px;' if instrument.photo.attached? %>
-                      <div class="card-body p-4">
-                        <div class="text-center">
-                          <h5 class="fw-bolder"><%= instrument.name %>, <%= instrument.model %> <%= instrument.brand %></h5>
-                          <div class="d-flex justify-content-center small text-warning mb-2">
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                            <div class="bi-star-fill"></div>
-                          </div>
-                          <p class="card-text">Preço: R$ <%= instrument.price %></p>
-                        </div>
-                      </div>
-                    </div>
-                    <%= link_to '', shop_path(instrument), class:'mt-auto stretched-link' %>
-                  </div>
-                <% end %>
+                <%= show_instrument(instrument, instrument.name, instrument.model, instrument.brand, instrument.price, instrument.photo, 'Drums') %>
               <% end %>
 
             </div>
